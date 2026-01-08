@@ -1,0 +1,20 @@
+{
+  "name": "hha-api",
+  "version": "1.0.0",
+  "description": "Demo API",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:craigduggan90/hha-api.git"
+  },
+  "license": "UNLICENSED",
+  "author": "Craig Duggan",
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
+    "commitlint": "^19.8.1",
+    "husky": "^9.1.7"
+  },
+  "scripts": {
+    "prepare": "husky"
+  }
+}
