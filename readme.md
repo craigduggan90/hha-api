@@ -1,5 +1,9 @@
 # String Redact API
 
+## Prerequisites
+
+1. .NET 10
+
 ## Building the Application
 
 1. Open a terminal window and navigate to `./src`
