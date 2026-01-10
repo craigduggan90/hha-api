@@ -2,7 +2,6 @@ using Alliance.Api.Infrastructure.Configuration;
 using Alliance.Api.Infrastructure.Logging;
 using Microsoft.Extensions.Options;
 using Serilog;
-using Serilog.Core;
 using Serilog.Filters;
 using System.Globalization;
 
