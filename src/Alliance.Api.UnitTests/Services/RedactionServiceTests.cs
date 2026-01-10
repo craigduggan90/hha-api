@@ -20,6 +20,14 @@ public class RedactionServiceTests
     };
     
     [Fact]
+    public void ShouldReturnEmptyString_WhenInputEmpty()
+    {
+        var sut = new RedactionService(Config);
+        var actual = sut.Redact(string.Empty);
+        Assert.Equal(string.Empty, actual);
+    }
+    
+    [Fact]
     public void ShouldApplyRedactions_WhereStringEndsWithCharacter()
     {
         const string input = "well dog SNAKE mammal what a DogSnake DOG";

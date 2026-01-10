@@ -17,10 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Using Include="Xunit" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <AssemblyAttribute Include="System.Diagnostics.CodeAnalysis.ExcludeFromCodeCoverageAttribute" />
     <ProjectReference Include="..\Alliance.Api\Alliance.Api.csproj" />
   </ItemGroup>
 

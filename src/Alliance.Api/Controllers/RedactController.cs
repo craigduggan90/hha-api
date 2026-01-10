@@ -16,6 +16,6 @@ public class RedactController(IRedactionService redactions) : ControllerBase
     [HttpPost]
     [Consumes(MediaTypeNames.Text.Plain)]
     [Produces("text/plain")]
-    public IActionResult RedactTest([FromBody] string input)
+    public IActionResult RedactText([FromBody] string input)
         => Ok(redactions.Redact(input));
 }
