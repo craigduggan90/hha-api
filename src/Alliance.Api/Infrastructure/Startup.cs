@@ -1,5 +1,6 @@
 using Alliance.Api.Infrastructure.Configuration;
 using Alliance.Api.Infrastructure.Logging;
+using Alliance.Api.Services;
 using Microsoft.Extensions.Options;
 using Serilog;
 using Serilog.Filters;
@@ -14,6 +15,7 @@ public static class Startup
         var serverConfiguration = new ServerConfiguration();
         builder.Configuration.GetSection("Server").Bind(serverConfiguration);
 
+        // Log everything but requestlogging to console, but send requestlogging to a file
         Log.Logger = new LoggerConfiguration()
             .WriteTo.Logger(logger => logger
                 .Filter.ByExcluding(Matching.FromSource<RequestLoggingMiddleware>())
@@ -40,6 +42,9 @@ public static class Startup
         builder.Services.Configure<RedactionConfiguration>(builder.Configuration.GetSection("Redaction"));
         builder.Services.AddSingleton<RedactionConfiguration>(sp =>
             sp.GetRequiredService<IOptions<RedactionConfiguration>>().Value);
+        
+        // Last one - add the redaction service
+        builder.Services.AddScoped<IRedactionService, RedactionService>();
         
         return builder;
     }
